@@ -3,17 +3,17 @@ import React from "react";
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
-const NewExpense = () => {
-  const onSaveExpenseData = (enteredExpenseData) => {
+const NewExpense = (props) => {
+  const onSaveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    console.log(expenseData);
+    props.onAddExpense;
   };
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData />
+      <ExpenseForm onSaveExpenseData={onSaveExpenseDataHandler} />
     </div>
   );
 };
