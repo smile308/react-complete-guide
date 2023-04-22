@@ -39,14 +39,10 @@ function App() {
     });
   };
 
-  const addDateHandler = (data) => {
-    console.log(data);
-  };
-
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} onAddfilterChange={addDateHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 }
